@@ -10,14 +10,15 @@ data class OutUser(
 
 data class DataUser( // OBJ pego
     var user: UserRegister?
-)
+    )
 
 data class UserRegister( //registrar
     val email: String?,
     val name: String?,
     val token: String?
 
-)
+    )
+
 
 
 

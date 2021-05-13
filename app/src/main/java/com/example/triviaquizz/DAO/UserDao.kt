@@ -1,8 +1,6 @@
 package com.example.triviaquizz.DAO
 
-import com.example.triviaquizz.Models.User.OutUser
-import com.example.triviaquizz.Models.User.UserError
-import com.example.triviaquizz.Models.User.inUser
+import com.example.triviaquizz.Models.User.*
 import com.example.triviaquizz.NetworkServices.UserService
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,30 +15,16 @@ class UserDao {
         .addConverterFactory(GsonConverterFactory.create()).build()
     val userservice = retrofit.create(UserService::class.java)
 
-    // Tá, o OutUser já tem o Data como um atributo desse tipo, ele não é uma subclasse do OutUser
-    // por isso não é possível usar: OutUser.Data
+    fun getAll(){
+        userservice.getAll().enqueue(object : Callback<List<inUser.User>> {
+            override fun onResponse(call: Call<List<inUser.User>>, response: Response<List<inUser.User>>) {
+                val user =  response.body()!!
+            }
+            override fun onFailure(call: Call<List<inUser.User>>, t: Throwable) {
+            }
 
-    // Imagina que na Activity (ou fragment, sei la) tu chama a funcao:
-    /**
-     * new UserDao().insert(passa o usuario aqui,
-     * Primeiro callback (de sucesso)
-     * {
-     *  user: OutUser ->
-     *      Acessa user aqui e faz o que tem que fazer, mostra sucesso e etc
-     *  },
-     *  Segundo callback (de falha)
-     *  {
-     *  error: UserError ->
-     *      Cuida das excessões, exibe mensagem de erro e etc
-     * })
-     * acho que eu entendi
-     * Única coisa que não sei se ele faz automatico é a conversão de Json pra essa class UserError
-     * Tem que ver na docs do RetroFit como funciona ou ver se Stiehl menciona nos videos
-     * okok :) eu tenho que ir dormir agr, mas eu acho que entendi
-     * Beleza, por enquanto faz só como se não existisse falha, só dei a ideia aqui pra tu já ficar ciente desse caso oko
-     * valeu de vdd :)
-     * De boa, boa noite. Vou mimir também. Flws ;)
-     */
+        })
+    }
 
     fun insert(user : inUser.User, finished : (user : OutUser) -> Unit,  fail: (response: UserError?) -> Unit) {
         userservice.insert(user).enqueue(object : Callback<OutUser> {
@@ -49,24 +33,32 @@ class UserDao {
                     val userAPI = response.body()!!
                     finished(userAPI)
                 } else {
-                    val response = OutUser("error" , null, "Mensagem de erro aqui")
+                    val response = OutUser("error" , null, "ErrorMenssager")
                     finished(response)}
                 }
-
-            /**
-             * Aviso:
-             * Me enganei, tu não passa no onFailure
-             * Nesse caso, tu cria mais um callback la em cima pra caso de erro
-             * Ai tu passa duas funções uma que é o finished (que é pra sucesso) e o fail que é pra falha
-             * onde o callback ?
-             */
             override fun onFailure(call : Call<OutUser> , t : Throwable) {
             }
 
         })
     }
+    fun login(login : Login, finished : (login : ResponseLogin) -> Unit) {
+        userservice.login(login).enqueue(object : Callback<ResponseLogin> {
+            override fun onResponse(
+                    call : Call<ResponseLogin> ,
+                    response : Response<ResponseLogin>
+            ) {
+                if (response.body() != null) {
+                    val loginAPI = response.body()!!
+                    finished(loginAPI)
+                } else {
+                    val response = ResponseLogin("error" , null)
+                    finished(response)
+                }
+            }
 
+            override fun onFailure(call : Call<ResponseLogin> , t : Throwable) {
+            }
 
-
-
+        })
+    }
 }
