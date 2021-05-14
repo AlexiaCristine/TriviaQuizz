@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffeded"
-    tools:context=".LoginFragment">
+    tools:context=".LoginActivity">
 
     <Button
-        android:id="@+id/btSignIn"
+        android:id="@+id/btLogin"
         android:layout_width="350dp"
         android:layout_height="39dp"
         android:layout_marginTop="56dp"
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btSignIn"
+        app:layout_constraintTop_toBottomOf="@+id/btLogin"
         app:layout_constraintVertical_bias="0.308" />
 
     <ImageView

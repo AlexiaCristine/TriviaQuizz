@@ -8,6 +8,6 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="164dp"
-        tools:layout_editor_absoluteY="94dp" />
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="160dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

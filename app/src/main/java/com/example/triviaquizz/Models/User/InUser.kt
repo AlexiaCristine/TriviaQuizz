@@ -7,7 +7,6 @@ class inUser {
         var password: String,
         var token: String
 
-
     ) {
         var id: Long? = null
     }
