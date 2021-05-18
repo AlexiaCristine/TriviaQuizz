@@ -1,6 +1,5 @@
 package com.example.triviaquizz.Models.User
 
-class inUser {
     data class User(
         var email: String,
         var name: String,
@@ -10,4 +9,3 @@ class inUser {
     ) {
         var id: Long? = null
     }
-}

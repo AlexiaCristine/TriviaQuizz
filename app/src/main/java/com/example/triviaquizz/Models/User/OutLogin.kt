@@ -6,7 +6,7 @@ data class Login( //Logar
 
     )
 data class DataLogin( //obj
-        var user : inUser.User
+        var user : User
     )
 
 data class ResponseLogin( //resposta do login

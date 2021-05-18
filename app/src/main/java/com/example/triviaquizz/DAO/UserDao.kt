@@ -16,17 +16,17 @@ class UserDao {
     val userservice = retrofit.create(UserService::class.java)
 
     fun getAll(){
-        userservice.getAll().enqueue(object : Callback<List<inUser.User>> {
-            override fun onResponse(call: Call<List<inUser.User>>, response: Response<List<inUser.User>>) {
+        userservice.getAll().enqueue(object : Callback<List<User>> {
+            override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
                 val user =  response.body()!!
             }
-            override fun onFailure(call: Call<List<inUser.User>>, t: Throwable) {
+            override fun onFailure(call: Call<List<User>>, t: Throwable) {
             }
 
         })
     }
 
-    fun insert(user : inUser.User, finished : (user : OutUser) -> Unit,  fail: (response: UserError?) -> Unit) {
+    fun insert(user : User, finished : (user : OutUser) -> Unit) {
         userservice.insert(user).enqueue(object : Callback<OutUser> {
             override fun onResponse( call : Call<OutUser>, response : Response<OutUser>){
                 if (response.body() != null) {
@@ -34,12 +34,15 @@ class UserDao {
                     finished(userAPI)
                 } else {
                     val response = OutUser("error" , null, "ErrorMenssager")
-                    finished(response)}
+                    finished(response)
                 }
+                finished(response.body()!!)
+            }
             override fun onFailure(call : Call<OutUser> , t : Throwable) {
             }
 
         })
+
     }
     fun login(login : Login, finished : (login : ResponseLogin) -> Unit) {
         userservice.login(login).enqueue(object : Callback<ResponseLogin> {

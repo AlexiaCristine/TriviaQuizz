@@ -10,13 +10,14 @@ interface UserService {
 
     @POST("users")
     @Headers("Content-Type:application/json; charset=UTF-8")
-    fun insert(@Body user: inUser.User): Call<OutUser>
+    fun insert(@Body user: User): Call<OutUser>
 
     @GET("/users")
-    fun getAll(): Call<List<inUser.User>>
+    fun getAll(): Call<List<User>>
 
     @POST("auth")
     @Headers("Content-Type:application/json; charset=UTF-8")
     fun login(@Body login : Login): Call<ResponseLogin> // resposta da api pro login
 
+    //register
 }

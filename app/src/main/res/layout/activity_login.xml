@@ -8,7 +8,7 @@
     tools:context=".LoginActivity">
 
     <Button
-        android:id="@+id/btLogin"
+        android:id="@+id/btnLogin"
         android:layout_width="350dp"
         android:layout_height="39dp"
         android:layout_marginTop="56dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txPasswordm" />
 
     <Button
-        android:id="@+id/btRegister"
+        android:id="@+id/btnRegister"
         android:layout_width="349dp"
         android:layout_height="47dp"
         android:text="Register"
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btLogin"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
         app:layout_constraintVertical_bias="0.308" />
 
     <ImageView
