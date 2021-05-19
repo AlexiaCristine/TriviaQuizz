@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
         }
         setContentView(R.layout.activity_login)
         createDB()
-        btnLogin.setOnClickListener { // porque esse botão n ta indo ?
+        btnLogin.setOnClickListener { //agr ta
 
             val password = txPasswordm.text.trim().toString()
             val email = txEmailm.text.trim().toString()
@@ -45,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "informação invalida", Toast.LENGTH_LONG).show();
             }
         }
-        btnRegister.setOnClickListener { // pq esse ta indo ?
+        btnRegister.setOnClickListener { // agr ta
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
