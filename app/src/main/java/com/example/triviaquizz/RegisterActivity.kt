@@ -7,7 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.triviaquizz.DAO.UserDao
 import com.example.triviaquizz.Models.User.User
 import kotlinx.android.synthetic.main.activity_register.*
-abstract class RegisterActivity : AppCompatActivity() {
+
+class RegisterActivity : AppCompatActivity() {
 
     private lateinit var dao: UserDao
 

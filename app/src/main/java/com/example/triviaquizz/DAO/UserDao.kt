@@ -11,8 +11,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 class UserDao {
 
     val url = "https://super-trivia-server.herokuapp.com/"
+
     val retrofit = Retrofit.Builder().baseUrl("https://super-trivia-server.herokuapp.com/")
         .addConverterFactory(GsonConverterFactory.create()).build()
+
     val userservice = retrofit.create(UserService::class.java)
 
     fun getAll(){
