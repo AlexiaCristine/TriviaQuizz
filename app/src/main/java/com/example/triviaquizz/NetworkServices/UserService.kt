@@ -10,6 +10,7 @@ interface UserService {
 
     @POST("users")
     @Headers("Content-Type:application/json; charset=UTF-8")
+    // esse aqui serve pra trazer tudo no formato JSON
     fun insert(@Body user: User): Call<OutUser>
 
     @GET("/users")
@@ -17,6 +18,7 @@ interface UserService {
 
     @POST("auth")
     @Headers("Content-Type:application/json; charset=UTF-8")
+    // esse aqui serve pra trazer tudo no formato JSON
     fun login(@Body login : Login): Call<ResponseLogin> // resposta da api pro login
 
     //register

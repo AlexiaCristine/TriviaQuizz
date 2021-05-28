@@ -29,16 +29,20 @@ class GameDao {
                     call: Call<Game.ResponseGame>,
                     response: Response<Game.ResponseGame>
                 ) {
-                    Log.i("Failure" , response.body()!!.toString())
+                    Log.i("Failure" ,
+                        response.body()!!.toString())
                     if (response.body() != null) {
-                        if (response.body()!!.status == "success") {
+                        if (response.body()!!.status ==
+                            "success"
+                        ) {
                             finished(response.body()!!)}
 
                     }
                 }
 
                 override fun onFailure(call : Call<Game.ResponseGame>, t : Throwable) {
-                    Log.i("Failure" , t.message.toString())
+                    Log.i("Failure" ,
+                        t.message.toString())
                 }
 
             })

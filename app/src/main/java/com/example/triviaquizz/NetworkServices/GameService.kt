@@ -9,6 +9,7 @@ interface GameService {
 
     @GET("games")
     @Headers("Content-Type:application/json; charset=UTF-8")
+    // esse aqui serve pra trazer tudo no formato JSON
 
     fun startG(
         @Query("difficulty") difficulty : String ,
@@ -17,5 +18,6 @@ interface GameService {
 
     @DELETE("games")
     @Headers("Content-Type:application/json; charset=UTF-8")
+    // esse aqui serve pra trazer tudo no formato JSON
     fun endGame(@Header("Authorization") authorization : String) : Call<OutGameResponse>
 }

@@ -6,7 +6,7 @@ class Game (
     var create: String ,
     var status: String ,
     var score: Int ,
-    @SerializedName("start_at")
+    @SerializedName("started_at")
     var startAt: String
 
     ) {
