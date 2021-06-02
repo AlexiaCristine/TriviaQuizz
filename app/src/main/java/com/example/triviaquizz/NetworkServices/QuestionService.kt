@@ -6,32 +6,25 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface QuestionService {
+    /**
+     * @Headers("Content-Type:application/json; charset=UTF-8") -> Formata tudo para JSON
+     * No contexto do código: Problem == Question
+     * @Header("Authorization") -> Requisita o cabeçalho de autorização informando o token adquirido
+     * no login
+    */
 
     @POST("problems/answer")
-    // aqui eu deixei problems mesmo pq é esse o caminho da API, mas problems == Question
     @Headers("Content-Type:application/json; charset=UTF-8")
-    // esse aqui serve pra trazer tudo no formato JSON
     fun answer(
-        @Query("answer") answer : Int,
-        @Header("Authorization") authorization : String
-    ) : Call<AnswerResponde>
+        @Query("answer") answer: Int,
+        @Header("Authorization") authorization: String): Call<AnswerResponde>
 
     @GET("problems/next")
-    // aqui eu deixei problems mesmo pq é esse o caminho da API, mas problems == Question
     @Headers("Content-Type:application/json; charset=UTF-8")
-    // esse aqui serve pra trazer tudo no formato JSON
-    fun getNext(@Header("Authorization")
-                authorization :
-                String) :
-            Call<QuestionResponse>
+    fun getNext(@Header("Authorization") authorization: String): Call<QuestionResponse>
 
     @GET("/problems/view")
-    // aqui eu deixei problems mesmo pq é esse o caminho da API, mas problems == Question
     @Headers("Content-Type:application/json; charset=UTF-8")
-    // esse aqui serve pra trazer tudo no formato JSON
-    fun getActual(@Header("Authorization")
-                   authorization :
-                   String) :
-            Call<QuestionResponse>
+    fun getActual(@Header("Authorization") authorization: String): Call<QuestionResponse>
 
 }

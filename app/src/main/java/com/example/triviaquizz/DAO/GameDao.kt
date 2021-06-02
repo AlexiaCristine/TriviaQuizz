@@ -2,6 +2,7 @@ package com.example.triviaquizz.DAO
 
 import android.util.Log
 import com.example.triviaquizz.Models.Game.Game
+import com.example.triviaquizz.Models.Game.OutGameResponse
 import com.example.triviaquizz.NetworkServices.GameService
 import com.google.gson.GsonBuilder
 import retrofit2.Call
@@ -21,22 +22,18 @@ class GameDao {
     fun startG(
         difficulty : String ,
         category_id : Long ,
+        authorization : String ,
         finished : (Game.ResponseGame) -> Unit
     ) {
 
-        gameService.startG(difficulty, category_id).enqueue(object : Callback<Game.ResponseGame> {
+        gameService.startG(difficulty, category_id, authorization).enqueue(object :
+            Callback<Game.ResponseGame> {
                 override fun onResponse(
                     call: Call<Game.ResponseGame>,
                     response: Response<Game.ResponseGame>
                 ) {
-                    Log.i("Failure" ,
-                        response.body()!!.toString())
-                    if (response.body() != null) {
-                        if (response.body()!!.status ==
-                            "success"
-                        ) {
-                            finished(response.body()!!)}
-
+                    if(response.isSuccessful) { // sucesso se o status HTTP retornar entre 200 e 300
+                        finished(response.body()!!)
                     }
                 }
 
@@ -46,5 +43,23 @@ class GameDao {
                 }
 
             })
+    }
+    fun endGame(authorization : String , finished : (OutGameResponse) -> Unit) {
+        gameService.endGame(authorization).enqueue(object : Callback<OutGameResponse> {
+            override fun onResponse(
+                call : Call<OutGameResponse> ,
+                response : Response<OutGameResponse>
+            ) {
+
+                if(response.isSuccessful) {
+                    finished(response.body()!!)
+                }
+            }
+
+            override fun onFailure(call : Call<OutGameResponse> , t : Throwable) {
+                Log.i("Failure" , t.message.toString())
+            }
+
+        })
     }
 }

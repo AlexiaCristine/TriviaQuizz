@@ -10,7 +10,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class CategoryDao {
-
     val catRetrofit =
         Retrofit.Builder().baseUrl("https://super-trivia-server.herokuapp.com/")
             .addConverterFactory(
@@ -23,6 +22,7 @@ class CategoryDao {
             override fun onResponse(call : Call<ResponseCategory>, response : Response<ResponseCategory>) {
                 if (response.body() != null) {
                     val category = response.body()!!
+                    Log.d("categories", category.toString())
                     finished(category)
                 }
             }

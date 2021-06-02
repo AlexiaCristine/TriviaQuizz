@@ -1,4 +1,5 @@
 package com.example.triviaquizz.NetworkServices
+
 import com.example.triviaquizz.Models.User.*
 import retrofit2.Call
 import retrofit2.http.Body
@@ -19,7 +20,7 @@ interface UserService {
     @POST("auth")
     @Headers("Content-Type:application/json; charset=UTF-8")
     // esse aqui serve pra trazer tudo no formato JSON
-    fun login(@Body login : Login): Call<ResponseLogin> // resposta da api pro login
+    fun login(@Body login: Login): Call<ResponseLogin> // resposta da api pro login
 
     //register
 }

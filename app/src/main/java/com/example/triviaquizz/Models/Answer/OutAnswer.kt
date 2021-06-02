@@ -1,7 +1,7 @@
 package com.example.triviaquizz.Models.Answer
 
 class AnswerData(
-    var answer : Answer
+    var answer: Answer
 )
 
 class AnswerResponde(

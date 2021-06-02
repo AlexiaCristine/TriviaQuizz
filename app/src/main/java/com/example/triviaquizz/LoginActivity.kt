@@ -53,8 +53,8 @@ class LoginActivity : AppCompatActivity() {
 
 
     private fun isLoggedIn(): Boolean {
-        val id = this.getSharedPreferences("login", Context.MODE_PRIVATE).getLong("userId", 0)
-        return !id.equals(0L)
+        val token = this.getSharedPreferences("login", Context.MODE_PRIVATE).getString("token", "")
+        return token!!.isNotBlank() // "" -> (empty), "     " -> (blank)
     }
 
     private fun iniciarMain() {

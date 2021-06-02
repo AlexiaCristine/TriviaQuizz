@@ -6,10 +6,10 @@ data class Login( //Logar
 
     )
 data class DataLogin( //obj
-        var user : User
+        var user: User
     )
 
 data class ResponseLogin( //resposta do login
         var status: String,
-        var data : DataLogin?
+        var data: DataLogin?
     )

@@ -3,11 +3,12 @@ package com.example.triviaquizz.Models.Game
 import com.google.gson.annotations.SerializedName
 
 class Game (
-    var create: String ,
-    var status: String ,
-    var score: Int ,
+    @SerializedName("creation")
+    var create: String,
+    var status: String,
     @SerializedName("started_at")
-    var startAt: String
+    var startAt: String,
+    var score: Int
 
     ) {
 

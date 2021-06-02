@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TriviaQuizz</string>
+    <string name="open_question">Pending Question</string>
+    <string name="continue_question">Continue Question</string>
+    <string name="ranking">Ranking</string>
+    <string name="home">Home</string>
+    <string name="logout">Logout</string>
 </resources>

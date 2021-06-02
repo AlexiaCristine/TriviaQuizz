@@ -12,12 +12,13 @@ interface GameService {
     // esse aqui serve pra trazer tudo no formato JSON
 
     fun startG(
-        @Query("difficulty") difficulty : String ,
-        @Query("category_id") category_id : Long ,
+        @Query("difficulty") difficulty: String,
+        @Query("category_id") category_id: Long,
+        @Header("Authorization") authorization: String,
     ) : Call<Game.ResponseGame>
 
     @DELETE("games")
     @Headers("Content-Type:application/json; charset=UTF-8")
     // esse aqui serve pra trazer tudo no formato JSON
-    fun endGame(@Header("Authorization") authorization : String) : Call<OutGameResponse>
+    fun endGame(@Header("Authorization") authorization: String): Call<OutGameResponse>
 }

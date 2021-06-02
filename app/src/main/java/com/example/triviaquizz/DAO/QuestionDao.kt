@@ -20,18 +20,13 @@ class QuestionDao {
                 override fun onResponse(
                     call : Call<QuestionResponse>,
                     response : Response<QuestionResponse>
-                ){
-                    if (response.body()!=null){
-                        if (response.body()!!.status==
-                            "success"
-                        ){
-                            val resp = response.body()!!
-                            finished(resp)
-                        }else{
-                            val resp = QuestionResponse(
-                                "error",
-                                null)
-                            finished(resp)}
+                ) {
+                    if(response.isSuccessful) {
+                        finished(response.body()!!)
+                    } else {
+                        finished(
+                            QuestionResponse("error", null)
+                        )
                     }
                 }
 
@@ -45,53 +40,37 @@ class QuestionDao {
         fun getCurrent(token:String, finished:(QuestionResponse)->Unit){
             questService.getActual(token).enqueue(object : Callback<QuestionResponse> {
             override fun onResponse(
-                call: Call<QuestionResponse> ,
+                call: Call<QuestionResponse>,
                 response: Response<QuestionResponse>
-                ){
-                 if(response.body()!=null){
-
-                        if(response.body()!!.status==
-                            "success"
-                        ){
-                            finished(response.body()!!)
-                        }else {
-                            val resp = QuestionResponse(
-                                "error",
-                                null)
-                            finished(resp)}
-                    }
+                ) {
+                     if(response.isSuccessful) {
+                         finished(response.body()!!)
+                     } else {
+                         finished(QuestionResponse("error", null))
+                     }
                 }
                 override fun onFailure(
                     call : Call<QuestionResponse> , t : Throwable
-                ) {
-                }
+                ) {}
             })
-
         }
+
         fun answer(token:String, answer: Int,finished:(AnswerResponde)->Unit){
             questService.answer(answer,token)
-                .enqueue(object : Callback<AnswerResponde>{
-
+                .enqueue(object : Callback<AnswerResponde> {
                     override fun onResponse(
                         call : Call<AnswerResponde> ,
                         response : Response<AnswerResponde>
-                ) {
-                    if (response.body()!=null){
-
-                        if (response.body()!!.status==
-                            "success"
-                        ){
+                    )
+                    {
+                        if(response.isSuccessful) {
                             finished(response.body()!!)
+                        } else {
+                            finished(AnswerResponde("error", null))
+                        }
+                    }
 
-                        }else{
-                            val resp = AnswerResponde(
-                                "error",
-                                null)
-                            finished(resp)}
-                    }}
-
-                override fun onFailure(call : Call<AnswerResponde> , t : Throwable) {
-                }
+                    override fun onFailure(call : Call<AnswerResponde> , t : Throwable) {}
             })
         }
 

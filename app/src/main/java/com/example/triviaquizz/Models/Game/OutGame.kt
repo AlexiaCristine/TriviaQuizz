@@ -2,7 +2,7 @@ package com.example.triviaquizz.Models.Game
 
 import com.google.gson.annotations.SerializedName
 
-class OutGame (
+class OutGame ( // aqui é pra acabar mesmo
     var status : String,
     @SerializedName("started_at")
     var startedAt : String,
@@ -12,12 +12,12 @@ class OutGame (
 
 )
 
-class OutGameDatabase(
+class OutGameData( // aqui é pra pegar a database do jogo terminado
     var game : OutGame
 )
 
-class OutGameResponse(
+class OutGameResponse( // aqui é o response pra terminar o jogo
     var status: String,
-    var data: OutGameDatabase?
+    var data: OutGameData?
 ){
 }

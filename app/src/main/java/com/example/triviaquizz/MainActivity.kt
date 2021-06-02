@@ -10,7 +10,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        menuBottom.setupWithNavController(findNavController(R.id.nav_grav))
-
+        menuBottom.setupWithNavController(findNavController(R.id.triviaNavFragment))
     }
 }
