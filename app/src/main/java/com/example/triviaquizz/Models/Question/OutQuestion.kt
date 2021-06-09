@@ -14,7 +14,7 @@ class AnswerQuestion(  // bloquinho acessando descrição e ordem das respostas
     var order: Int
     )
 
-class QuestionResponse(
+class QuestionResponse( // resposta da aplicação para a questão ( aswer)
     var status : String,
     var data : DataQuestion?
     )

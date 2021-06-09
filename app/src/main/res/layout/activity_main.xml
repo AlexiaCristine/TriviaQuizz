@@ -10,9 +10,6 @@
         android:id="@+id/menuBottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:itemIconTint="@color/white"
-        app:itemRippleColor="@color/white"
-        app:itemTextColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,6 +25,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/nav_trivia" />
+        app:navGraph="@navigation/nav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

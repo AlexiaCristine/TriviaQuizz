@@ -14,9 +14,6 @@ interface UserService {
     // esse aqui serve pra trazer tudo no formato JSON
     fun insert(@Body user: User): Call<OutUser>
 
-    @GET("/users")
-    fun getAll(): Call<List<User>>
-
     @POST("auth")
     @Headers("Content-Type:application/json; charset=UTF-8")
     // esse aqui serve pra trazer tudo no formato JSON

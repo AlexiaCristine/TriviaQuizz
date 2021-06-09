@@ -9,8 +9,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class UserDao {
-    val url = "https://super-trivia-server.herokuapp.com/"
-
     val retrofit = Retrofit
         .Builder()
         .baseUrl("https://super-trivia-server.herokuapp.com/")
@@ -18,15 +16,6 @@ class UserDao {
         .build()
     val userservice = retrofit.create(UserService::class.java)
 
-    fun getAll(){
-        userservice.getAll().enqueue(object : Callback<List<User>> {
-            override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
-                val user =  response.body()!!
-            }
-            override fun onFailure(call: Call<List<User>>, t: Throwable) {
-            }
-        })
-    }
 
     fun insert(user : User, finished : (user : OutUser) -> Unit) {
         userservice.insert(user).enqueue(object : Callback<OutUser> {

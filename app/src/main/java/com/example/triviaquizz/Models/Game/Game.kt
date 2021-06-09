@@ -2,7 +2,7 @@ package com.example.triviaquizz.Models.Game
 
 import com.google.gson.annotations.SerializedName
 
-class Game (
+class Game ( // o game sendo criado
     @SerializedName("creation")
     var create: String,
     var status: String,

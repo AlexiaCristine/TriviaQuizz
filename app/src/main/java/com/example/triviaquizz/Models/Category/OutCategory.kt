@@ -12,7 +12,4 @@ class ResponseCategory(
     @SerializedName("data")
     var dataCat: CategoryData
 )
-{
-
-}
 

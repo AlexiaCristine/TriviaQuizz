@@ -2,14 +2,12 @@ package com.example.triviaquizz.Fragments
 
 import android.app.AlertDialog
 import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.triviaquizz.Adapters.AdapterQuestion
@@ -24,7 +22,6 @@ class Game : Fragment() {
         private lateinit var problemAdapter : AdapterQuestion
         val problemController = ControllQuestion()
 
-        @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
         override fun onCreateView(
             inflater : LayoutInflater , container : ViewGroup? ,
             savedInstanceState : Bundle?
@@ -34,7 +31,6 @@ class Game : Fragment() {
             return view
         }
 
-        @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
         fun setView(view : View) {
             Log.d("appState", InitController.Companion.toString())
             if (InitController.problem) {
@@ -50,7 +46,6 @@ class Game : Fragment() {
 
         }
 
-        @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
         private fun getCurrent(view : View) {
             val build: AlertDialog.Builder = AlertDialog.Builder(activity)
             build.setView(R.layout.activity_loading)
@@ -77,7 +72,6 @@ class Game : Fragment() {
 
         }
 
-        @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
         private fun getNext(view : View) {
             val build: AlertDialog.Builder = AlertDialog.Builder(activity)
             build.setView(R.layout.activity_loading)

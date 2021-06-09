@@ -1,13 +1,9 @@
 package com.example.triviaquizz.Adapters
 
-import android.app.Activity
 import android.app.AlertDialog
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.triviaquizz.ControllGame
@@ -17,10 +13,9 @@ import com.example.triviaquizz.Models.Category.Category
 import com.example.triviaquizz.R
 import kotlinx.android.synthetic.main.rv_category.view.*
 
-@RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 class AdapterCategory(view : View) : RecyclerView.Adapter<AdapterCategory.CategoryHolder>() {
     private val categorydao = CategoryDao()
-    private val gameAdapter = ControllGame()
+    private val gamecontroll = ControllGame()
     private var category = listOf<Category>()
     val build : AlertDialog.Builder = AlertDialog.Builder(view.context)
         .setView(R.layout.activity_loading)
@@ -63,10 +58,10 @@ class AdapterCategory(view : View) : RecyclerView.Adapter<AdapterCategory.Catego
         fun fillView(category : Category) {
             itemView.txtCategory.text = category.name
             itemView.setOnClickListener {
-                load.show()
+                load.show() // inicio o carregamento da tela de loading
                 InitController.category = category
-                gameAdapter.start {game->
-                    load.dismiss()
+                gamecontroll.start { game->
+                    load.dismiss() // finalizo a tela de loading
                     InitController.game = game.data!!.game
 
                     it.findNavController().navigate(R.id.action_category_to_game)

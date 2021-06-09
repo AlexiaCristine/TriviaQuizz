@@ -4,15 +4,11 @@ class AnswerData(
     var answer: Answer
 )
 
-class AnswerResponde(
+class AnswerResponse(
     var status: String,
     var data: AnswerData?
 )
 
 class CorrectAnswer(
     var order: Int,
-    var description: String
 )
-{
-
-}

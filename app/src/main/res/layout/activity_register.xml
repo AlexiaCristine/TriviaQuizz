@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E3A5A5"
+    android:background="@color/rosa2"
     tools:context=".RegisterActivity">
 
 
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="116dp"
         android:text="Register"
-        android:textColor="#E13245"
+        android:textColor="@color/rosa1"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:backgroundTint="#E13245"
+        android:backgroundTint="@color/rosa1"
         android:text="Register"
         android:textColor="#fff"
         app:layout_constraintBottom_toTopOf="@+id/tvLogin"
@@ -76,6 +76,7 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="Login ?"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

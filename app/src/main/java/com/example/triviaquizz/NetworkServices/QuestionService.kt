@@ -1,6 +1,6 @@
 package com.example.triviaquizz.NetworkServices
 
-import com.example.triviaquizz.Models.Answer.AnswerResponde
+import com.example.triviaquizz.Models.Answer.AnswerResponse
 import com.example.triviaquizz.Models.Question.QuestionResponse
 import retrofit2.Call
 import retrofit2.http.*
@@ -17,7 +17,7 @@ interface QuestionService {
     @Headers("Content-Type:application/json; charset=UTF-8")
     fun answer(
         @Query("answer") answer: Int,
-        @Header("Authorization") authorization: String): Call<AnswerResponde>
+        @Header("Authorization") authorization: String): Call<AnswerResponse>
 
     @GET("problems/next")
     @Headers("Content-Type:application/json; charset=UTF-8")

@@ -8,5 +8,3 @@ class Answer (
     var correctAnswer : CorrectAnswer,
     var score: Int
 )
-{
-}

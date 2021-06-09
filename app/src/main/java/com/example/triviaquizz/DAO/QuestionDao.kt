@@ -1,6 +1,6 @@
 package com.example.triviaquizz.DAO
 
-import com.example.triviaquizz.Models.Answer.AnswerResponde
+import com.example.triviaquizz.Models.Answer.AnswerResponse
 import com.example.triviaquizz.Models.Question.QuestionResponse
 import com.example.triviaquizz.NetworkServices.QuestionService
 import retrofit2.*
@@ -55,22 +55,22 @@ class QuestionDao {
             })
         }
 
-        fun answer(token:String, answer: Int,finished:(AnswerResponde)->Unit){
+        fun answer(token:String, answer: Int,finished:(AnswerResponse)->Unit){
             questService.answer(answer,token)
-                .enqueue(object : Callback<AnswerResponde> {
+                .enqueue(object : Callback<AnswerResponse> {
                     override fun onResponse(
-                        call : Call<AnswerResponde> ,
-                        response : Response<AnswerResponde>
+                        call : Call<AnswerResponse>,
+                        response : Response<AnswerResponse>
                     )
                     {
                         if(response.isSuccessful) {
                             finished(response.body()!!)
                         } else {
-                            finished(AnswerResponde("error", null))
+                            finished(AnswerResponse("error", null))
                         }
                     }
 
-                    override fun onFailure(call : Call<AnswerResponde> , t : Throwable) {}
+                    override fun onFailure(call : Call<AnswerResponse>, t : Throwable) {}
             })
         }
 

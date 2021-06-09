@@ -1,28 +1,24 @@
 package com.example.triviaquizz.Adapters
 
 import android.app.AlertDialog
-import android.content.res.Resources
 import android.graphics.Color
-import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.triviaquizz.*
 import com.example.triviaquizz.Models.Question.AnswerQuestion
 import kotlinx.android.synthetic.main.rv_answers.view.*
 
-@RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 class AdapterQuestion(answers : List<AnswerQuestion>, view : View) :
     RecyclerView.Adapter<AdapterQuestion.QuestionHolder>() {
+
     val build: AlertDialog.Builder = AlertDialog.Builder(view.context)
         .setView(R.layout.activity_loading)
         .setCancelable(false)
-    val load: AlertDialog = build.create()
+
     val questioncontroll = ControllQuestion()
     private val gameAdapter = ControllGame()
     private var listAnswers = listOf<AnswerQuestion>()
@@ -56,11 +52,11 @@ class AdapterQuestion(answers : List<AnswerQuestion>, view : View) :
             itemView.setOnClickListener {
                 questioncontroll.answer(answer.order) { answerAPI ->
                     if (answer.order == answerAPI) {
-                        itemView.bkAnswer.setBackgroundColor(Color.parseColor("#008000"))
+                        itemView.bkAnswer.setBackgroundColor(Color.parseColor("#FFC0CB"))
                     } else {
-                        itemView.bkAnswer.setBackgroundColor(Color.parseColor("#ff0000"))
+                        itemView.bkAnswer.setBackgroundColor(Color.parseColor("#DC143C"))
                     }
-                    InitController.problem = false
+                    InitController.problem = false // pra poder pegar outra questão
                     val mAlertDialog = AlertDialog.Builder(itemView.context).apply {
                         setIcon(R.drawable.home)
                         setTitle(R.string.app_name)
@@ -68,7 +64,7 @@ class AdapterQuestion(answers : List<AnswerQuestion>, view : View) :
                             MainApplication.getContext()?.getString(R.string.continue_question)
                         )
                     }
-                    mAlertDialog.setPositiveButton("Yes") { dialog, id ->
+                    mAlertDialog.setPositiveButton("Yes") { dialog, id -> // sim eu quero continuar o jogo
                         gameAdapter.start { game ->
                             Log.e("game", game.toString())
                             InitController.game = game.data!!.game
