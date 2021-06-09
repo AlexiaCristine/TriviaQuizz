@@ -1,7 +1,8 @@
-package com.example.triviaquizz
+package com.example.triviaquizz.Controllers
 
 import android.app.Application
 import android.content.Context
+import com.example.triviaquizz.MainApplication
 import com.example.triviaquizz.Models.Category.Category
 import com.example.triviaquizz.Models.Game.Game
 import com.example.triviaquizz.Models.Question.AnswerQuestion
@@ -19,8 +20,7 @@ class InitController: Application() {
             var answers = listOf<AnswerQuestion>()
 
             fun getAuthToken(): String {
-                val token = MainApplication
-                    .getContext()
+                val token = MainApplication.getContext()
                     ?.getSharedPreferences("login", Context.MODE_PRIVATE)
                     ?.getString("token", "")
 

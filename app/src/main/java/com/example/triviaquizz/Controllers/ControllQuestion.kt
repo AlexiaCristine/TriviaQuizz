@@ -1,4 +1,4 @@
-package com.example.triviaquizz
+package com.example.triviaquizz.Controllers
 
 import com.example.triviaquizz.DAO.QuestionDao
 import com.example.triviaquizz.Models.Question.QuestionResponse

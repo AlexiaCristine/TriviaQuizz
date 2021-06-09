@@ -1,4 +1,4 @@
-package com.example.triviaquizz
+package com.example.triviaquizz.Activitys
 
 import android.content.Context
 import android.content.Intent
@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.triviaquizz.DAO.UserDao
 import com.example.triviaquizz.Models.User.Login
+import com.example.triviaquizz.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 

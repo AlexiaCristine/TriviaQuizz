@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="action_resumeFragment_to_gameFragment" type="id">
-        action_resumeFragment_to_gameFragment
-    </item>
+
 </resources>

@@ -1,5 +1,8 @@
 package com.example.triviaquizz.Fragments
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +12,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import com.example.triviaquizz.ControllGame
-import com.example.triviaquizz.InitController
+import com.example.triviaquizz.Activitys.LoginActivity
+import com.example.triviaquizz.Controllers.ControllGame
+import com.example.triviaquizz.Controllers.InitController
 import com.example.triviaquizz.R
 import kotlinx.android.synthetic.main.fragment_resume.*
 
@@ -56,7 +60,8 @@ class Resume : Fragment() {
         }
     }
 
-    override fun onViewCreated(view : View , savedInstanceState : Bundle?) {
+    @SuppressLint("ResourceType")
+    override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
         super.onViewCreated(view , savedInstanceState)
         navController = Navigation.findNavController(view)
         btnResumeBack.setOnClickListener {
@@ -66,8 +71,7 @@ class Resume : Fragment() {
             InitController.endGame = true
             InitController.question = ""
             InitController.problem = false
-
-            navController!!.navigate(R.id.action_resumeFragment_to_gameFragment)
+            navController!!.navigate(R.layout.fragment_difficult)
 
         }
     }

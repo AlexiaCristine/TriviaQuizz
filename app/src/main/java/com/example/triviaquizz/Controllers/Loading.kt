@@ -1,7 +1,8 @@
-package com.example.triviaquizz
+package com.example.triviaquizz.Controllers
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.triviaquizz.R
 
 class Loading : AppCompatActivity(){
 

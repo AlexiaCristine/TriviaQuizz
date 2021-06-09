@@ -1,4 +1,4 @@
-package com.example.triviaquizz
+package com.example.triviaquizz.Controllers
 
 import com.example.triviaquizz.DAO.GameDao
 import com.example.triviaquizz.Models.Category.Category

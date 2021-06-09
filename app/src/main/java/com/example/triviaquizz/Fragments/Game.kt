@@ -11,8 +11,8 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.triviaquizz.Adapters.AdapterQuestion
-import com.example.triviaquizz.ControllQuestion
-import com.example.triviaquizz.InitController
+import com.example.triviaquizz.Controllers.ControllQuestion
+import com.example.triviaquizz.Controllers.InitController
 import com.example.triviaquizz.R
 import kotlinx.android.synthetic.main.fragment_game.*
 import kotlinx.android.synthetic.main.fragment_game.view.*

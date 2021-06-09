@@ -10,9 +10,9 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import com.example.triviaquizz.ControllGame
-import com.example.triviaquizz.InitController
-import com.example.triviaquizz.LoginActivity
+import com.example.triviaquizz.Controllers.ControllGame
+import com.example.triviaquizz.Controllers.InitController
+import com.example.triviaquizz.Activitys.LoginActivity
 import com.example.triviaquizz.R
 import kotlinx.android.synthetic.main.fragment_difficult.view.*
 

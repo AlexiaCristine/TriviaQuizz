@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="#ffeded"
     android:backgroundTint="#E3A5A5"
-    tools:context=".Loading">
+    tools:context=".Controllers.Loading">
 
     <ProgressBar
         android:id="@+id/progressBar"

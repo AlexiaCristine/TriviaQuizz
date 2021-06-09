@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.triviaquizz.ControllGame
+import com.example.triviaquizz.Controllers.ControllGame
 import com.example.triviaquizz.DAO.CategoryDao
-import com.example.triviaquizz.InitController
+import com.example.triviaquizz.Controllers.InitController
 import com.example.triviaquizz.Models.Category.Category
 import com.example.triviaquizz.R
 import kotlinx.android.synthetic.main.rv_category.view.*

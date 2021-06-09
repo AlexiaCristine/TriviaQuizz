@@ -9,6 +9,9 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.triviaquizz.*
+import com.example.triviaquizz.Controllers.ControllGame
+import com.example.triviaquizz.Controllers.ControllQuestion
+import com.example.triviaquizz.Controllers.InitController
 import com.example.triviaquizz.Models.Question.AnswerQuestion
 import kotlinx.android.synthetic.main.rv_answers.view.*
 
