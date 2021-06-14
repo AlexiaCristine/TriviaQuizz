@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TriviaQuizz</string>
+    <string name="ranking">Ranking</string>
+    <string name="home">Tela Inicial</string>
+    <string name="logout">Sair</string>
+    <string name="name">Perguntas do Morango</string>
+    <string name="open_question">Questão Pendente</string>
+    <string name="continue_question">Continuar Questão</string>
+    <string name="Password">Senha</string>
+    <string name="Register">Registrar-se</string>
+    <string name="confirmepassword">Confirmar Senha</string>
+    <string name="Name">nome</string>
+    <string name="Select">Selecione sua categoria!</string>
+    <string name="SelectDif">Selecione sua dificuldade!</string>
+    <string name="easy">facil</string>
+    <string name="medium">medio</string>
+    <string name="hard">dificil</string>
+    <string name="Logout">Sair</string>
+    <string name="score">placar</string>
+    <string name="resume">Resumo</string>
+    <string name="difficult">Dificuldade</string>
+    <string name="category">Categoria</string>
+    <string name="back">Novo jogo !</string>
+</resources>

@@ -5,4 +5,22 @@
     <string name="ranking">Ranking</string>
     <string name="home">Home</string>
     <string name="logout">Logout</string>
+    <string name="name">Strawberry Quiz</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="Password">Password</string>
+    <string name="Login" translatable="false">Login</string>
+    <string name="Register">Register</string>
+    <string name="confirmepassword">" Confirme Password"</string>
+    <string name="Name">Name</string>
+    <string name="Select">Select Your Category !</string>
+    <string name="SelectDif">Select Your Difficult !</string>
+    <string name="easy">easy</string>
+    <string name="medium">medium</string>
+    <string name="hard">Hard</string>
+    <string name="Logout">Logout</string>
+    <string name="score">score</string>
+    <string name="resume">resume</string>
+    <string name="difficult">difficult</string>
+    <string name="category">category</string>
+    <string name="back">New Game!</string>
 </resources>
